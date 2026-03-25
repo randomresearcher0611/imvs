@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InteractiveSegmentation</class>
+ <widget class="qMRMLWidget" name="InteractiveSegmentation">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>279</width>
+    <height>286</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="ctkCollapsibleButton"
+     name="interactiveModelTrainingCollapsibleButton">
+     <property name="text">
+      <string>Interactive Model Training</string>
+     </property>
+
+     <layout class="QFormLayout" name="interactiveModelTrainingFormLayout">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="interactiveModelTrainingEnabledCheckBox">
+        <property name="text">
+         <string>Enabled</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+
+      <item row="1" column="0">
+       <widget class="QLabel" name="interactiveModelTrainingApiUrlLabel">
+        <property name="text">
+         <string>API URL:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <layout class="QHBoxLayout">
+        <item>
+         <widget class="QLineEdit" name="interactiveModelTrainingApiUrlLineEdit">
+          <property name="placeholderText">
+           <string>API URL</string>
+          </property>
+         </widget>
+        </item>
+
+        <item row="1" column="2">
+         <widget class="QPushButton" name="interactiveModelTrainingApiUrlTestButton">
+          <property name="text">
+           <string>Test</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="ctkCollapsibleButton" name="maskTrackingCollapsibleButton">
+     <property name="text">
+      <string>Mask Tracker</string>
+     </property>
+
+     <layout class="QFormLayout" name="maskTrackingFormLayout">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="maskTrackingEnabledCheckBox">
+        <property name="text">
+         <string>Enabled</string>
+        </property>
+       </widget>
+      </item>
+
+      <item row="1" column="0">
+       <widget class="QLabel" name="maskTrackingApiUrlLabel">
+        <property name="text">
+         <string>API URL:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <layout class="QHBoxLayout">
+        <item>
+         <widget class="QLineEdit" name="maskTrackingApiUrlLineEdit">
+          <property name="placeholderText">
+           <string>API URL</string>
+          </property>
+         </widget>
+        </item>
+
+        <item row="1" column="2">
+         <widget class="QPushButton" name="maskTrackingApiUrlTestButton">
+          <property name="text">
+           <string>Test</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="maskTrackingSliceLimitsCheckBox">
+        <property name="text">
+         <string>Apply Slice Limits</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <layout class="QHBoxLayout">
+        <item>
+         <widget class="QLineEdit" name="maskTrackingSliceMinLimitLineEdit">
+          <property name="placeholderText">
+           <string>Min Slice Number</string>
+          </property>
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+
+        <item>
+         <widget class="QLineEdit" name="maskTrackingSliceMaxLimitLineEdit">
+          <property name="placeholderText">
+           <string>Max Slice Number</string>
+          </property>
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+
+      <item row="3" column="0">
+       <widget class="QLabel" name="maskTrackingTrackingModeLabel">
+        <property name="text">
+         <string>Tracking Mode:</string>
+        </property>
+       </widget>
+      </item>
+
+      <item row="3" column="1">
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QRadioButton" name="maskTrackingTrackingModeTrackUntilEndRadioButton">
+          <property name="text">
+           <string>Track Until End</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="maskTrackingTrackingModeTrackUntilBothEndsRadioButton">
+          <property name="text">
+           <string>Track Until Both Ends</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout">
+          <item>
+           <widget class="QRadioButton" name="maskTrackingTrackingModeTrackPrevNextRadioButton">
+            <property name="text">
+             <string>Track Prev-Next</string>
+            </property>
+           </widget>
+          </item>
+
+          <item>
+           <widget class="QLineEdit" name="maskTrackingTrackingModeTrackPrevNextPrevSlicesLineEdit">
+            <property name="placeholderText">
+             <string>Prev Slices</string>
+            </property>
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+
+          <item>
+           <widget class="QLineEdit" name="maskTrackingTrackingModeTrackPrevNextNextSlicesLineEdit">
+            <property name="placeholderText">
+             <string>Next Slices</string>
+            </property>
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+
+     </layout>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="ctkCollapsibleButton"
+     name="maskRefinerCollapsibleButton">
+     <property name="text">
+      <string>Mask Refiner</string>
+     </property>
+
+     <layout class="QFormLayout" name="maskRefinerFormLayout">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="maskRefinerEnabledCheckBox">
+        <property name="text">
+         <string>Enabled</string>
+        </property>
+       </widget>
+      </item>
+
+      <item row="1" column="0">
+       <widget class="QLabel" name="maskRefinerApiUrlLabel">
+        <property name="text">
+         <string>API URL:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <layout class="QHBoxLayout">
+        <item>
+         <widget class="QLineEdit" name="maskRefinerApiUrlLineEdit">
+          <property name="placeholderText">
+           <string>API URL</string>
+          </property>
+         </widget>
+        </item>
+
+        <item row="1" column="2">
+         <widget class="QPushButton" name="maskRefinerApiUrlTestButton">
+          <property name="text">
+           <string>Test</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="maskRefinerRefineCurrentBeforeTrackingCheckBox">
+        <property name="text">
+         <string>Refine Current Slice's Mask Before Tracking</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+
+   <item>
+    <layout class="QHBoxLayout">
+     <item>
+      <widget class="QPushButton" name="copyMaskFromPrevSliceButton">
+       <property name="text">
+        <string>Copy Mask From Prev Slice</string>
+       </property>
+      </widget>
+     </item>
+
+     <item>
+      <widget class="QPushButton" name="copyMaskFromNextSliceButton">
+       <property name="text">
+        <string>Copy Mask From Next Slice</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+   <item>
+    <layout class="QHBoxLayout">
+     <item>
+      <widget class="QPushButton" name="runSegmentorButtonPushButton">
+       <property name="text">
+        <string>Run Segmentor</string>
+       </property>
+      </widget>
+     </item>
+
+     <item>
+      <widget class="QPushButton" name="runImlPipelinePushButton">
+       <property name="text">
+        <string>Run IML Pipeline</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="sameSegmentationPushButton">
+     <property name="text">
+      <string>Save Segmentation</string>
+     </property>
+    </widget>
+   </item>
+
+   <!-- <item>
+    <widget class="QPushButton" name="test1PushButton">
+     <property name="text">
+      <string>Test 1</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="test2PushButton">
+     <property name="text">
+      <string>Test 2</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="test3PushButton">
+     <property name="text">
+      <string>Test 3</string>
+     </property>
+    </widget>
+   </item> -->
+
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ctkCollapsibleButton</class>
+   <extends>QWidget</extends>
+   <header>ctkCollapsibleButton.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ctkSliderWidget</class>
+   <extends>QWidget</extends>
+   <header>ctkSliderWidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>qMRMLNodeComboBox</class>
+   <extends>QWidget</extends>
+   <header>qMRMLNodeComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>qMRMLWidget</class>
+   <extends>QWidget</extends>
+   <header>qMRMLWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources />
+ <connections>
+  <connection>
+   <sender>InteractiveSegmentation</sender>
+   <signal>mrmlSceneChanged(vtkMRMLScene*)</signal>
+   <receiver>inputSelector</receiver>
+   <slot>setMRMLScene(vtkMRMLScene*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>248</x>
+     <y>61</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>InteractiveSegmentation</sender>
+   <signal>mrmlSceneChanged(vtkMRMLScene*)</signal>
+   <receiver>outputSelector</receiver>
+   <slot>setMRMLScene(vtkMRMLScene*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>82</x>
+     <y>135</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>220</x>
+     <y>161</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>InteractiveSegmentation</sender>
+   <signal>mrmlSceneChanged(vtkMRMLScene*)</signal>
+   <receiver>invertedOutputSelector</receiver>
+   <slot>setMRMLScene(vtkMRMLScene*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>161</x>
+     <y>8</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>173</x>
+     <y>176</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

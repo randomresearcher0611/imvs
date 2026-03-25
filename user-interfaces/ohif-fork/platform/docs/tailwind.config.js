@@ -1,0 +1,114 @@
+module.exports = {
+  // Don't purge any tailwind classes, usefull for debugging
+  // ...(process.env.NODE_ENV === 'development' && {
+  //   safelist: [{ pattern: /.*/ }],
+  // }),
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+    '../ui-next/**/*.{ts,tsx,js, jsx}',
+  ],
+  prefix: '',
+  theme: {
+    fontFamily: {
+      inter: ['Inter', 'sans-serif'],
+    },
+    fontSize: {
+      xxs: '0.6875rem', // 11px
+      xs: '0.75rem', // 12px
+      sm: '0.8125rem', // 13px
+      base: '0.875rem', // 14px
+      lg: '1rem', // 16px
+      xl: '1.125rem', // 18px
+      '2xl': '1.25rem', // 20px
+      '3xl': '1.375rem', // 22px
+      '4xl': '1.5rem', // 24px
+      '5xl': '1.875rem', // 30px
+    },
+    fontWeight: {
+      hairline: '100',
+      thin: '200',
+      light: '300',
+      normal: '400',
+      medium: '500',
+      semibold: '600',
+      bold: '700',
+      extrabold: '800',
+      black: '900',
+    },
+    extend: {
+      colors: {
+        highlight: 'hsl(var(--highlight))',
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+      bkg: {
+        low: '#041505',
+        med: '#072314',
+        full: '#042c14',
+      },
+      info: {
+        primary: '#FFFFFF',
+        secondary: '#7BB2CE',
+      },
+      actions: {
+        primary: '#4eef99',
+        highlight: '#5ACCB5',
+        hover: 'rgba(52, 140, 253, 0.2)',
+      },
+    },
+  },
+  plugins: [require('tailwindcss-animate')],
+};
