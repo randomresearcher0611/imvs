@@ -1,3 +1,5 @@
+Note: Repository has a majority of TypeScript code because we have cloned OHIF and put it under `user-interfaces` (to keep our fork anonymous).
+
 This is anonymized source code released only for the review of the paper titled "IMVS: Interactive Medical Volume Segmentation with Test-Time Adaptation - A New Method for Annotating Radiology Datasets". This repository must not be distributed openly.
 
 `/model` contains the IMVS inference source code.
